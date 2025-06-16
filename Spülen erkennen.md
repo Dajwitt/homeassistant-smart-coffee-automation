@@ -36,4 +36,4 @@ mode: restart
 - Der **Schalter** `input_boolean.spulen_erkannt` wird für **55 Sekunden** aktiviert.
 - Dadurch wird in anderen Automationen vermieden, dass der Spülvorgang als Kaffeezubereitung erkannt wird.
 - Danach wird der Spülen-Schalter wieder deaktiviert.
-- Zusätzlich wird der **40-Minuten-Timer** gestartet, damit die Maschine nicht sofort wieder abgeschaltet wird.
+- Zusätzlich wird der **40-Minuten-Timer** gestartet, damit du genau weisst, wann die Maschine wieder abgeschaltet wird.
