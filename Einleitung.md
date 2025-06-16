@@ -22,7 +22,8 @@ Diese Anleitung zeigt dir, wie du mit einem Stromsensor, einem Türkontakt, ein 
 ### 🚫 Kein vollautomatischer Barista
 
 So smart die Erkennung auch ist – **die Maschine bleibt manuell**: Du musst weiterhin selbst den Knopf drücken, um einen Kaffee zu starten. Die Automationen begleiten dich dabei intelligent, erkennen Abläufe, überwachen den Zustand und helfen beim Energiesparen. Sie ersetzen aber (noch) nicht den menschlichen Griff zur Taste.  
-💡 Dafür bekommst du volle Transparenz – und vielleicht ein kleines Stück smarteren Alltag.
+
+> 💡 Dafür bekommst du volle Transparenz – und vielleicht ein kleines Stück smarteren Alltag.
 
 ---
 
