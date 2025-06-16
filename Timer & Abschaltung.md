@@ -72,7 +72,4 @@ mode: restart
 - **40 Minuten ohne Kaffee vorbei:** Der 15-Minuten-Timer wird gestartet – dieser fungiert als Countdown zur Abschaltung.
 - **15 Minuten auch vorbei:** Wenn der 40-Minuten-Timer nicht (mehr) aktiv ist, wird der Switch kurz ausgeschaltet und nach 2 Sekunden wieder eingeschaltet – dadurch geht die Maschine in den Standby, ohne erneut zu spülen
 
-::: info
-Damit ist ein zuverlässiges, zeitgesteuertes Abschalten der Maschine möglich – ohne unnötige Spülvorgänge.
-
-:::
+> Damit ist ein zuverlässiges, zeitgesteuertes Abschalten der Maschine möglich – ohne unnötige Spülvorgänge.
