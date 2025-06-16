@@ -65,7 +65,7 @@ Diese Helfer sind essenziell, um den Zustand der Kaffeemaschine zu erkennen, zu 
 
 ---
 
-#### ⏱️ input_boolean.kaffee_5_min_timer
+#### 🔁 input_boolean.kaffee_5_min_timer
 
 - **Typ:** Schalter (Boolesche Eingabe) 
 - **Name:** Kaffee 5 Min Timer
