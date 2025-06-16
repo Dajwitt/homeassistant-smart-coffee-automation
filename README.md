@@ -1,0 +1,1 @@
+# homeassistant-smart-coffee-automation
