@@ -6,7 +6,7 @@
 alias: Delongi Kaffeezubereitung erkennen
 triggers:
   - entity_id:
-      - sensor.kaffeemaschine_led_switch_0_power
+      - sensor.kaffeemaschine_power
     above: 1300
     trigger: numeric_state
 conditions:
