@@ -82,8 +82,3 @@ Dann kannst du die **Sensoren, Schwellenwerte und Zeitintervalle** einfach anpas
 - Du willst deinem Home Assistant ein echtes Highlight verpassen?
 
 Dann wirst du dieses Projekt lieben.
-
-::: success
-„Dieses Projekt ist Open Source und darf gern erweitert, verändert und geteilt werden.“
-
-:::
