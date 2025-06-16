@@ -28,7 +28,7 @@ Damit Home Assistant zuverlässig zwischen **Kaffeezubereitung**, **Spülvorgang
 - **Ziel:** Erkennen, wann der Wassertank (basierend auf Anzahl der Zubereitungen) leer ist.
 - **Benötigt:** Anzahl möglicher Kaffees mit einer Tankfüllung.
 
- > **Beispiel Delonghi:** **Beispiel Delonghi:** Etwa **5 Tassen pro Tankfüllung** – Home Assistant erkennt frühzeitig einen möglichen Engpass, noch bevor die Maschine selbst eine Warnung anzeigt.
+ > **Beispiel Delonghi:** Etwa **5 Tassen pro Tankfüllung** – Home Assistant erkennt frühzeitig einen möglichen Engpass, noch bevor die Maschine selbst eine Warnung anzeigt.
 
 ---
 
