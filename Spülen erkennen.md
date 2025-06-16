@@ -6,7 +6,7 @@
 alias: Delongi Spülen erkennen
 trigger:
   - platform: numeric_state
-    entity_id: sensor.kaffeemaschine_led_switch_0_power
+    entity_id: sensor.kaffeemaschine_power
     above: 500
 condition:
   - condition: state
