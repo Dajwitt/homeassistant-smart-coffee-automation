@@ -113,13 +113,14 @@ mode: single
   - Alexa gibt eine Warnung („Das Wasser reicht nicht mehr für einen weiteren Kaffee!“),
   - der **Helfer** `input_boolean.kaffee_5_min_timer` wird aktiviert,
   - ein **5-Minuten-Timer** startet.
-- **Wird der Tank erneut für 10 Sekunden entnommen**, bevor der Timer abläuft:
+- **Wird der Tank für 10 Sekunden entnommen**, bevor der Timer abläuft:
   - Der Timer wird gestoppt,
   - die Maschine bleibt eingeschaltet.
 - **Läuft der Timer vollständig ab**, ohne dass Wasser nachgefüllt wurde:
   - Die Kaffeemaschine wird **ausgeschaltet**,
   - nach 5 Sekunden automatisch **wieder eingeschaltet**, um eine erneute Zubereitung zu blockieren.
 - Fällt der Zähler **unter 1**, wird der Timer ebenfalls gestoppt.
+- Wird die Maschine eingeschaltet, der Zähler ist immer noch über 5 und es wurde kein Wasser nachgefüllt, gibt Alexa erneut eine Warnung („Das Wasser reicht nicht mehr für einen weiteren Kaffee!“) aus.
 
 > Damit wird eine zuverlässige Tanküberwachung möglich, ohne Sensor im Inneren – allein durch Beobachtung von Entnahmezeit und Zählerstand.
 
