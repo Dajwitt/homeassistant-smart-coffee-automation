@@ -31,15 +31,16 @@ So smart die Erkennung auch ist – **die Maschine bleibt manuell**: Du musst we
 
 Wenn du direkt loslegen willst, folge einfach dieser Schritt-für-Schritt-Anleitung:
 
-1. Benötigte Datenquellen und Messwerte – Welche Werte du kennen und messen musst
-2. Geräte – Welche Hardware zum Einsatz kommt
-3. Helfer – Die Basis für Logik und Status
-4. Template Sensoren – Logik für Stromauswertung
-5. Automationen – Intelligenz für dein System
-   - Kaffeezubereitung erkennen
-   - Spülen erkennen
-   - Timer & Abschaltung
-   - Wassertank – Zähler zurücksetzen
+1. 🔍 [Benötigte Datenquellen und Messwerte](./Benötigte%20Datenquellen%20und%20Messwerte.md)
+2. 🧰 [Geräte & Sensor-Voraussetzungen](./Geräte.md)
+3. 🛠️ [Helfer (Helpers)](./Helfer.md)
+4. 🧪 [Template Sensoren](./Template%20Sensoren.md)
+5. ⚙️ Automationen:
+
+   * [Kaffeezubereitung erkennen](./Kaffeezubereitung%20erkennen.md)
+   * [Spülvorgang erkennen](./Delongi%20Spülen%20erkennen.md)
+   * [Timer & Abschaltung](./Timer%20%26%20Abschaltung.md)
+   * [Wassertank – Zähler zurücksetzen](./Wassertank%20–%20Zähler%20zurücksetzen.md)
 
 ---
 
