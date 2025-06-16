@@ -6,7 +6,7 @@
 alias: Delongi Kaffeezubereitung erkennen
 triggers:
   - entity_id:
-      - sensor.kaffeemaschine_power
+      - sensor.kaffeemaschine_power    #hier deinen Power Sensor eintragen!
     above: 1300
     trigger: numeric_state
 conditions:
@@ -17,7 +17,7 @@ actions:
   - repeat:
       while:
         - condition: numeric_state
-          entity_id: sensor.kaffeemaschine_power
+          entity_id: sensor.kaffeemaschine_power   #hier deinen Power Sensor eintragen!
           above: 1300
       sequence:
         - target:
