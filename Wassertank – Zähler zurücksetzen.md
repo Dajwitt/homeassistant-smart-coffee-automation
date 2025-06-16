@@ -18,7 +18,7 @@ trigger:
     above: 5
     id: zähler über 5
   - platform: numeric_state
-    entity_id: sensor.kaffeemaschine_led_switch_0_power
+    entity_id: sensor.kaffeemaschine_power
     above: 50
     for: "00:00:05"
     id: verbrauch erkannt
@@ -32,7 +32,7 @@ trigger:
     to: "off"
     id: Helfer aus
   - platform: state
-    entity_id: switch.kaffeemaschine_led_switch_0
+    entity_id: switch.kaffeemaschine_switch
     to: "off"
     id: Maschine aus
 action:
@@ -57,11 +57,11 @@ action:
           - service: timer.start
             target:
               entity_id: timer.kaffeemaschine_5_min_timer
-          - service: notify.alexa_media_echo_wohnzimmer
+          - service: notify.alexa_media_echo
             data:
               message: Das Wasser reicht nicht mehr für einen weiteren Kaffee!
               title: Kaffeequeen
-              target: media_player.echo_wohnzimmer
+              target: media_player.echo
               data:
                 type: announce
                 method: all
@@ -71,11 +71,11 @@ action:
         sequence:
           - service: switch.turn_off
             target:
-              entity_id: switch.kaffeemaschine_led_switch_0
+              entity_id: switch.kaffeemaschine_switch
           - delay: "00:00:05"
           - service: switch.turn_on
             target:
-              entity_id: switch.kaffeemaschine_led_switch_0
+              entity_id: switch.kaffeemaschine_switch
           - service: timer.finish
             target:
               entity_id: timer.kaffeemaschine_15_min_timer
