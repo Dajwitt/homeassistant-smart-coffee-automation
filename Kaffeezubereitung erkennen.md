@@ -75,7 +75,6 @@ mode: restart
   - Weitere Automationen wie **Abschaltung** und **Wassertanküberwachung** reagieren auf diesen Zählerstand.
 - Nach weiteren 10 Sekunden wird `kaffee_letzter_wert` wieder auf 0 gesetzt, um für den nächsten Vorgang bereit zu sein.
 
-  ::: info
-  Diese Erkennung arbeitet rein auf Basis von Energieverbrauch und Zeit – ohne direkte Kommunikation mit dem Gerät. Sie funktioniert zuverlässig, solange man die Verbräuche seines Geräts kennt und typische Muster beobachtet.
 
-  :::
+> Diese Erkennung arbeitet rein auf Basis von Energieverbrauch und Zeit – ohne direkte Kommunikation mit dem Gerät. Sie funktioniert zuverlässig, solange man die Verbräuche seines Geräts kennt und typische Muster beobachtet.
+
