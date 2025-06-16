@@ -103,6 +103,24 @@ action:
           - service: input_boolean.turn_off
             target:
               entity_id: input_boolean.kaffee_5_min_timer
+      - conditions:
+          - condition: and
+            conditions:
+              - condition: trigger
+                id:
+                  - zähler über 5
+              - condition: state
+                entity_id: input_boolean.spulen_erkannt
+                state: "on"
+        sequence:
+          - action: notify.alexa_media_echo_wohnzimmer
+            data:
+              message: Das Wasser reicht nicht mehr für einen weiteren Kaffee!
+              title: Kaffeequeen
+              target: media_player.echo_wohnzimmer
+              data:
+                type: announce
+                method: all
 mode: single
 ```
 
