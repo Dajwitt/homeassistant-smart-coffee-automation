@@ -57,12 +57,12 @@ action:
         sequence:
           - service: switch.turn_off
             target:
-              entity_id: switch.kaffeemaschine_led_switch_0
+              entity_id: switch.kaffeemaschine
           - delay:
               seconds: 2
           - service: switch.turn_on
             target:
-              entity_id: switch.kaffeemaschine_led_switch_0
+              entity_id: switch.kaffeemaschine
 mode: restart
 ```
 
