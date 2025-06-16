@@ -57,12 +57,12 @@ action:
         sequence:
           - service: switch.turn_off
             target:
-              entity_id: switch.kaffeemaschine
+              entity_id: switch.kaffeemaschine    #hier deinen Switch Sensor eintragen!
           - delay:
               seconds: 2
           - service: switch.turn_on
             target:
-              entity_id: switch.kaffeemaschine
+              entity_id: switch.kaffeemaschine   #hier deinen Switch Sensor eintragen!
 mode: restart
 ```
 
