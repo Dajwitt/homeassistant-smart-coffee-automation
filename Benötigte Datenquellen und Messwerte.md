@@ -9,10 +9,9 @@ Damit Home Assistant zuverlässig zwischen **Kaffeezubereitung**, **Spülvorgang
 - **Ziel:** Den Spülvorgang beim Einschalten erkennen.
 - **Benötigt:** Verbrauch in Watt + Dauer in Sekunden.
 
-  ::: info
-  **Beispiel Delonghi:** Nach dem Einschalten steigt der Verbrauch kurz auf **über 500 Watt** und bleibt dort für rund **55 Sekunden**.
+ 
+> **Beispiel Delonghi:** Nach dem Einschalten steigt der Verbrauch kurz auf **über 500 Watt** und bleibt dort für rund **55 Sekunden**.
 
-  :::
 
 ---
 
