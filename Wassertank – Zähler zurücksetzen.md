@@ -121,7 +121,5 @@ mode: single
   - nach 5 Sekunden automatisch **wieder eingeschaltet**, um eine erneute Zubereitung zu blockieren.
 - Fällt der Zähler **unter 1**, wird der Timer ebenfalls gestoppt.
 
-::: info
-Damit wird eine zuverlässige Tanküberwachung möglich, ohne Sensor im Inneren – allein durch Beobachtung von Entnahmezeit und Zählerstand.
+> Damit wird eine zuverlässige Tanküberwachung möglich, ohne Sensor im Inneren – allein durch Beobachtung von Entnahmezeit und Zählerstand.
 
-:::
