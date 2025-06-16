@@ -17,7 +17,7 @@ actions:
   - repeat:
       while:
         - condition: numeric_state
-          entity_id: sensor.kaffeemaschine_led_switch_0_power
+          entity_id: sensor.kaffeemaschine_power
           above: 1300
       sequence:
         - target:
@@ -62,6 +62,7 @@ actions:
       value: 0
     action: input_number.set_value
 mode: restart
+
 ```
 
 #### **Was passiert konkret?**
