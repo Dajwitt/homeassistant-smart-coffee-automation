@@ -8,7 +8,7 @@ description: >-
   Setzt den Zähler zurück, wenn der Wassertank länger als 10 Sekunden entnommen wurde.
 trigger:
   - platform: state
-    entity_id: binary_sensor.wassertank_contact
+    entity_id: binary_sensor.wassertank_contact   #hier deinen Kontakt am Wassertank eintragen!
     from: "off"
     to: "on"
     for: "00:00:10"
@@ -18,7 +18,7 @@ trigger:
     above: 5
     id: zähler über 5
   - platform: numeric_state
-    entity_id: sensor.kaffeemaschine_power
+    entity_id: sensor.kaffeemaschine_power   #hier deinen Power Sensor eintragen!
     above: 50
     for: "00:00:05"
     id: verbrauch erkannt
@@ -32,7 +32,7 @@ trigger:
     to: "off"
     id: Helfer aus
   - platform: state
-    entity_id: switch.kaffeemaschine_switch
+    entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
     to: "off"
     id: Maschine aus
 action:
@@ -71,11 +71,11 @@ action:
         sequence:
           - service: switch.turn_off
             target:
-              entity_id: switch.kaffeemaschine_switch
+              entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
           - delay: "00:00:05"
           - service: switch.turn_on
             target:
-              entity_id: switch.kaffeemaschine_switch
+              entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
           - service: timer.finish
             target:
               entity_id: timer.kaffeemaschine_15_min_timer
