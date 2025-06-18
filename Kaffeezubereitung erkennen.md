@@ -13,6 +13,7 @@ conditions:
   - condition: state
     entity_id: input_boolean.spulen_erkannt
     state: "off"
+    for: "00:00:05"
 actions:
   - repeat:
       while:
