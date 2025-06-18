@@ -37,3 +37,25 @@ mode: restart
 - Dadurch wird in anderen Automationen vermieden, dass der Spülvorgang als Kaffeezubereitung erkannt wird.
 - Danach wird der Spülen-Schalter wieder deaktiviert.
 - Zusätzlich wird der **40-Minuten-Timer** gestartet, damit du genau weisst, wann die Maschine wieder abgeschaltet wird.
+
+### 🛠 Anpassung an deine Maschine
+
+Die Werte in dieser Automation sind auf **meine DeLonghi-Maschine** abgestimmt – insbesondere der verwendete **Verbrauchssensor** und der **Watt-Schwellenwert** zum Erkennen des Spülvorgangs.
+
+Damit die Automation auch bei dir zuverlässig funktioniert, musst du folgende Punkte **individuell anpassen**:
+
+- 🔌 **Power-Sensor**  
+  Ersetze `sensor.kaffeemaschine_power` durch die `entity_id` deines eigenen Stromsensors – z. B. `sensor.shelly_plug_power` oder ein Zigbee-Gerät mit Leistungsmessung.
+
+- ⚡ **Watt-Wert (`above`)**  
+  Passe die Schwelle an den typischen Verbrauch deiner Maschine **während des Spülvorgangs** an. Bei DeLonghi liegt dieser meist bei ca. 500–600 Watt. Bei anderen Geräten kann das stark variieren.
+
+- ⏱ **Delay-Zeit**  
+  Der `delay`-Wert (z. B. `00:00:55`) orientiert sich an der **Dauer des Spülvorgangs**. Wenn deine Maschine kürzer oder länger spült, passe den Wert entsprechend an.
+
+---
+
+💡 **Tipp zur Analyse**  
+Starte deine Maschine manuell und beobachte den Stromverbrauch im Energie-Diagramm von Home Assistant.  
+So erkennst du genau, wann der Spülvorgang beginnt und wie lange er dauert – das hilft dir bei der optimalen Anpassung.
+
