@@ -1,5 +1,9 @@
 ### 📅 2025-06-19
 
+* **Timer und Abschaltung**
+    * **Verbesserte Text-Erläuterungen:** Der Abschnitt "Was passiert konkret?" wurde detaillierter formuliert, um die Logik hinter dem Starten und Beenden der Timer sowie der Abschaltsequenz klarer darzustellen.
+    * **Anpassungshinweis ergänzt:** Ein eigener Abschnitt "🛠 Anpassung an deine Maschine" wurde hinzugefügt
+
 * **Template Sensoren**
     * **Code-Verbesserung:** `unique_id` hinzugefügt.
     * **Verbesserte Text-Erläuterungen:** Die Abschnitte "💡 **Erklärungen zu den erweiterten Parametern** und ▶️ **Nächste Schritte** wurden hinzugefügt
