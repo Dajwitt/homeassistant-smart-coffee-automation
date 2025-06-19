@@ -1,3 +1,19 @@
+### 📅 2025-06-20
+
+* **Automation: Delongi Spülen erkennen**
+    * Den Trigger robuster gemacht, um Fehlalarme durch kurze Leistungsspitzen zu vermeiden. 
+    * `for:`-Dauer zum Trigger hinzugefügt, um sicherzustellen, dass der erhöhte Stromverbrauch für eine bestimmte Zeit anhält, bevor die Automation auslöst. 
+        ```yaml
+        trigger:
+          - platform: numeric_state
+            entity_id: sensor.dein_power_sensor_hier # Ersetze dies mit der echten ID deines Sensors (z.B. sensor.shelly_plug_power)
+            above: 500
+            for: # <--- Neu: Hier eine Dauer hinzufügen!
+              seconds: 2 # Oder 3, je nachdem wie kurz/lang die Spitze deiner Spülung ist.
+        ```
+    * Klarstellung im Text, dass es um einen *Anstieg* des Verbrauchs geht, der für eine gewisse Zeit gehalten wird, nicht um eine kurzzeitige "Spitze".
+    * Beispielcode für den Trigger aktualisiert, um die Verwendung von `for:` zu demonstrieren.
+
 ### 📅 2025-06-18
 
 1. 🆕 **Changelog-Datei erstellt** für zukünftige Nachverfolgung von Änderungen.
