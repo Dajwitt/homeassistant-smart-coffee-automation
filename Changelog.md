@@ -1,5 +1,10 @@
 ### 📅 2025-06-19
 
+* **Template Sensoren**
+    * **Code-Verbesserung:** `unique_id` hinzugefügt.
+    * **Verbesserte Text-Erläuterungen:** Die Abschnitte "💡 **Erklärungen zu den erweiterten Parametern** und ▶️ **Nächste Schritte** wurden hinzugefügt
+
+
 * **Automation: Delongi Spülen erkennen**
     * Den Trigger robuster gemacht, um Fehlalarme durch kurze Leistungsspitzen zu vermeiden. 
     * `for:`-Dauer zum Trigger hinzugefügt, um sicherzustellen, dass der erhöhte Stromverbrauch für eine bestimmte Zeit anhält, bevor die Automation auslöst.
