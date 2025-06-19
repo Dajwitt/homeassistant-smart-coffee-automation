@@ -1,4 +1,4 @@
-### 📅 2025-06-20
+### 📅 2025-06-19
 
 * **Automation: Delongi Spülen erkennen**
     * Den Trigger robuster gemacht, um Fehlalarme durch kurze Leistungsspitzen zu vermeiden. 
@@ -14,15 +14,18 @@
     * Klarstellung im Text, dass es um einen *Anstieg* des Verbrauchs geht, der für eine gewisse Zeit gehalten wird, nicht um eine kurzzeitige "Spitze".
     * Beispielcode für den Trigger aktualisiert, um die Verwendung von `for:` zu demonstrieren.
 
+---
+
 ### 📅 2025-06-18
 
-1. 🆕 **Changelog-Datei erstellt** für zukünftige Nachverfolgung von Änderungen.
+🆕 **Changelog-Datei erstellt** für zukünftige Nachverfolgung von Änderungen.
 
-2. ✍️ **Hinweis zur Maschinenabhängigkeit in der Spül-Erkennung ergänzt** 
+
+✍️ **Hinweis zur Maschinenabhängigkeit in der Spül-Erkennung ergänzt** 
    → Die verwendete entity_id (Verbrauchssensor) und die delay-Zeit können je nach Kaffeemaschine variieren und müssen ggf. angepasst werden.
 
   
- 3. ✅ **Kaffeezählung verbessert** Eine zusätzliche Bedingung verhindert, dass ein Spülvorgang fälschlich als Kaffee gezählt wird.  
+✅ **Kaffeezählung verbessert** Eine zusätzliche Bedingung verhindert, dass ein Spülvorgang fälschlich als Kaffee gezählt wird.  
    Die input_boolean.spulen_erkannt muss mindestens 5 Sekunden auf off stehen, bevor gezählt wird:
 
   ```yaml
@@ -33,7 +36,7 @@
       for: "00:00:05"
   ```
 
-4. 📌 **Kaffeezubereitung-Erkennung überarbeitet**
+📌 **Kaffeezubereitung-Erkennung überarbeitet**
 
 - Beschreibung und Abläufe klarer erläutert
 - 15-Sekunden-Verzögerung nach dem Zählen erklärt (zur Filterung von Verbrauchsschwankungen)
