@@ -3,125 +3,113 @@
 **Zweck:** Setzt den Kaffeezähler zurück, wenn der Wassertank für über 10 Sekunden entnommen wird. Erkennt außerdem, wenn mehr als 5 Kaffee zubereitet wurden – in dem Fall wird gewarnt, ein Timer gestartet und ggf. die Maschine neu gestartet.
 
 ```
-alias: Delongi Wassertank - Zähler zurücksetzen
-description: >-
-  Setzt den Zähler zurück, wenn der Wassertank länger als 10 Sekunden entnommen wurde.
-trigger:
-  - platform: state
-    entity_id: binary_sensor.wassertank_contact   #hier deinen Kontakt am Wassertank eintragen!
+alias: 💧 Wassertank überwachen – Zähler zurücksetzen neu
+description: ""
+triggers:
+  - entity_id: binary_sensor.wassertank_contact
     from: "off"
     to: "on"
     for: "00:00:10"
-    id: tank entnommen nachfüllen
-  - platform: numeric_state
-    entity_id: counter.kaffeezubereitungen
+    id: tank_entnommen
+    trigger: state
+  - entity_id: counter.kaffeemaschine_zubereitungen
     above: 5
-    id: zähler über 5
-  - platform: numeric_state
-    entity_id: sensor.kaffeemaschine_power   #hier deinen Power Sensor eintragen!
+    id: zaehler_ueber_max
+    trigger: numeric_state
+  - entity_id: sensor.kaffeemaschine_power
     above: 50
     for: "00:00:05"
-    id: verbrauch erkannt
-  - platform: numeric_state
-    entity_id: counter.kaffeezubereitungen
+    id: verbrauch_erkannt
+    trigger: numeric_state
+  - entity_id: counter.kaffeemaschine_zubereitungen
     below: 1
-    id: zähler unter 1
-  - platform: state
-    entity_id: input_boolean.kaffee_5_min_timer
-    from: "on"
-    to: "off"
-    id: Helfer aus
-  - platform: state
-    entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
-    to: "off"
-    id: Maschine aus
-action:
+    id: zaehler_unter_1
+    trigger: numeric_state
+  - entity_id: timer.kaffeemaschine_wasser_nachfuell_prompt
+    from: active
+    to: idle
+    id: wasser_timer_abgelaufen
+    trigger: state
+actions:
   - choose:
       - conditions:
           - condition: trigger
-            id: tank entnommen nachfüllen
+            id: tank_entnommen
         sequence:
-          - service: counter.reset
-            target:
-              entity_id: counter.kaffeezubereitungen
-          - service: timer.cancel
-            target:
-              entity_id: timer.kaffeemaschine_5_min_timer
+          - wait_for_trigger:
+              - entity_id: binary_sensor.wassertank_contact
+                to: "off"
+                trigger: state
+            timeout: "00:05:00"
+            continue_on_timeout: true
+          - target:
+              entity_id: counter.kaffeemaschine_zubereitungen
+            action: counter.reset
+            data: {}
       - conditions:
           - condition: trigger
-            id: zähler über 5
+            id: zaehler_ueber_max
         sequence:
-          - service: input_boolean.turn_on
-            target:
-              entity_id: input_boolean.kaffee_5_min_timer
-          - service: timer.start
-            target:
-              entity_id: timer.kaffeemaschine_5_min_timer
-          - service: notify.alexa_media_echo
-            data:
-              message: Das Wasser reicht nicht mehr für einen weiteren Kaffee!
-              title: Kaffeequeen
-              target: media_player.echo
-              data:
-                type: announce
-                method: all
+          - target:
+              entity_id: timer.kaffeemaschine_wasser_nachfuell_prompt
+            action: timer.start
+            data: {}
+          - target:
+              entity_id: input_boolean.sprachbenachrichtigung_ausloeser_wassertank
+            action: input_boolean.turn_on
+            data: {}
+          - delay:
+              seconds: 5
+          - target:
+              entity_id: input_boolean.sprachbenachrichtigung_ausloeser_wassertank
+            action: input_boolean.turn_off
+            data: {}
       - conditions:
           - condition: trigger
-            id: 5 min Timer abgelaufen
+            id: zaehler_unter_1
+          - condition: state
+            entity_id: timer.kaffeemaschine_wasser_nachfuell_prompt
+            state: active
         sequence:
-          - service: switch.turn_off
-            target:
-              entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
-          - delay: "00:00:05"
-          - service: switch.turn_on
-            target:
-              entity_id: switch.kaffeemaschine_switch   #hier deinen Switch Sensor eintragen!
-          - service: timer.finish
-            target:
-              entity_id: timer.kaffeemaschine_15_min_timer
-      - conditions:
-          - condition: trigger
-            id: zähler unter 1
-        sequence:
-          - service: timer.cancel
-            target:
-              entity_id: timer.kaffeemaschine_5_min_timer
-      - conditions:
-          - condition: trigger
-            id: Helfer aus
-        sequence:
-          - service: timer.cancel
-            target:
-              entity_id: timer.kaffeemaschine_5_min_timer
-      - conditions:
-          - condition: trigger
-            id: Maschine aus
-        sequence:
-          - service: timer.cancel
-            target:
-              entity_id: timer.kaffeemaschine_5_min_timer
-          - service: input_boolean.turn_off
-            target:
-              entity_id: input_boolean.kaffee_5_min_timer
+          - target:
+              entity_id: timer.kaffeemaschine_wasser_nachfuell_prompt
+            action: timer.cancel
+            data: {}
       - conditions:
           - condition: and
             conditions:
               - condition: trigger
-                id:
-                  - zähler über 5
+                id: verbrauch_erkannt
+              - condition: numeric_state
+                entity_id: counter.kaffeemaschine_zubereitungen
+                above: 5
               - condition: state
-                entity_id: input_boolean.spulen_erkannt
-                state: "on"
+                entity_id: timer.kaffeemaschine_idle_ausschalt_timer
+                state: idle
+              - condition: state
+                entity_id: timer.kaffeemaschine_standby_vorwarnung
+                state: idle
         sequence:
-          - action: notify.alexa_media_echo_wohnzimmer
-            data:
-              message: Das Wasser reicht nicht mehr für einen weiteren Kaffee!
-              title: Kaffeequeen
-              target: media_player.echo_wohnzimmer
-              data:
-                type: announce
-                method: all
+          - target:
+              entity_id: input_boolean.sprachbenachrichtigung_ausloeser_wassertank
+            action: input_boolean.turn_on
+            data: {}
+          - delay:
+              seconds: 5
+          - target:
+              entity_id: input_boolean.sprachbenachrichtigung_ausloeser_wassertank
+            action: input_boolean.turn_off
+            data: {}
+      - conditions:
+          - condition: trigger
+            id: wasser_timer_abgelaufen
+        sequence:
+          - target:
+              entity_id: switch.kaffeemschine
+            action: switch.turn_off
+            data: {}
 mode: single
+
 ```
 
 **Was passiert konkret?**
