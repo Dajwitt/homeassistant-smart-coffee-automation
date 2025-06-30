@@ -1,63 +1,30 @@
-Dashboard zur Überwachung ob alles funktioniert.
+# ⚠️ Projekt veraltet – bitte auf neue Version umsteigen
 
-```
-views:
-  - type: sections
-    max_columns: 4
-    title: Kaffeemaschine
-    path: tablet
-    sections:
-      - type: grid
-        cards:
-          - type: entities
-            entities:
-              - entity: counter.kaffeezubereitungen
-              - entity: timer.kaffeemaschine_5_min_timer
-          - type: tile
-            entity: timer.kaffeemaschine_40_min_timer
-            grid_options:
-              columns: 12
-              rows: 1
-            features_position: bottom
-            vertical: false
-          - type: tile
-            entity: timer.kaffeemaschine_15_min_timer
-            grid_options:
-              columns: 12
-              rows: 1
-            features_position: bottom
-            vertical: false
-          - type: tile
-            entity: binary_sensor.wassertank_contact
-            grid_options:
-              columns: 12
-              rows: 1
-            features_position: bottom
-            vertical: false
-            name: Wassertank
-      - type: grid
-        cards:
-          - type: entities
-            entities:
-              - entity: switch.kaffeemaschine_switch
-              - entity: sensor.kaffeemaschine_power
-      - type: grid
-        cards:
-          - type: heading
-            icon: mdi:fridge
-            heading: Start & Spülen
-            heading_style: title
-          - type: tile
-            entity: input_boolean.spulen_erkannt
-            features_position: bottom
-            vertical: false
-      - type: grid
-        cards:
-          - type: entities
-            entities:
-              - entity: binary_sensor.kaffeezubereitung_erkannt
-              - entity: input_number.kaffeetimer
-              - entity: input_number.kaffee_letzter_wert
-            title: 20 - 60 Sekunden - Kaffee erkannt
-    cards: []
-```
+> 📢 **Wichtiger Hinweis:** Dieses Projekt wurde vollständig überarbeitet und ist ab sofort unter folgendem Link verfügbar:
+
+🔗 **[➡️ homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)**
+
+---
+
+## 🆕 Was ist neu?
+
+- ✅ Komplette Überarbeitung mit besserer Struktur
+- ✅ Alle Automationen als Blueprints verfügbar
+- ✅ Verbesserte Erkennung von Spülvorgängen & Tassengröße
+- ✅ Statistiken & Dashboard inklusive
+- ✅ Schritt-für-Schritt-Anleitung mit Beispielen
+
+---
+
+### Warum wurde es neu erstellt?
+
+Die erste Version war ein guter Start, aber schwer zu warten und nicht modular. Die neue Version ist deutlich einfacher zu übernehmen, robuster und dokumentiert.  
+**Der Wechsel lohnt sich – versprochen.**
+
+---
+
+➡️ **Hier geht’s direkt zur neuen Version:**  
+[https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)
+
+Viel Spaß mit Version 2.0 ☕🚀  
+
