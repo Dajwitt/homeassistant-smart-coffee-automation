@@ -1,41 +1,30 @@
-## Geräte für das smarte Kaffee-Setup 🛠️
+# ⚠️ Projekt veraltet – bitte auf neue Version umsteigen
 
-Damit dein Kaffeevollautomat künftig nicht nur brüht, sondern auch „spricht“, brauchst du ein paar unterstützende Helferlein. Die hier vorgestellten Geräte sind erprobt und erfüllen ihren Zweck – du kannst sie aber natürlich mit ähnlichen Geräten ersetzen, sofern sie dieselben Funktionen abdecken.
+> 📢 **Wichtiger Hinweis:** Dieses Projekt wurde vollständig überarbeitet und ist ab sofort unter folgendem Link verfügbar:
 
-### ☕ Mein Setup (Beispiel)
-
-| Komponente        | Funktion                                                                 |
-|-------------------|--------------------------------------------------------------------------|
-| **Kaffeevollautomat** | Delonghi ECAM 20.116.B – klassisches Modell ohne smarte Funktionen       |
-| **Shelly 1PM Gen3**   | Misst präzise den Stromverbrauch und kann die Maschine ein-/ausschalten  |
-| **Aqara Türsensor**   | Erkennt, ob der Wassertank entnommen wurde                               |
-| **Amazon Echo**       | Gibt Sprachausgaben bei leerem Wassertank oder erfolgreicher Zubereitung |
-
-> 💡 **Wichtig:** Dein Automat muss nicht smart sein – entscheidend ist, dass er sich *vorhersagbar* verhält: Spült beim Einschalten, verbraucht Strom beim Brühen, spült wieder beim Ausschalten.
+🔗 **[➡️ homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)**
 
 ---
 
-### **🔌 Shelly 1PM – Warum?**
+## 🆕 Was ist neu?
 
-Er misst kontinuierlich den Stromverbrauch – das Herzstück der Erkennung:
-
-- Spülen → kurze Last über 500 W
-- Kaffee → stabiler Verbrauch 1300–1600 W
-
----
-
-### **🚰 Türsensor – Warum?**
-
-Er erkennt, wenn der Wassertank entnommen wurde. Wird er z. B. länger als 10 Sekunden entfernt, geht Home Assistant davon aus: **Tank wurde nachgefüllt** → Zähler wird zurückgesetzt.
-
-So kannst du dich z. B. nach 5 Kaffeezubereitungen daran erinnern lassen:
-
-> „Das Wasser reicht nicht mehr für einen weiteren Kaffee! 😱“
+- ✅ Komplette Überarbeitung mit besserer Struktur
+- ✅ Alle Automationen als Blueprints verfügbar
+- ✅ Verbesserte Erkennung von Spülvorgängen & Tassengröße
+- ✅ Statistiken & Dashboard inklusive
+- ✅ Schritt-für-Schritt-Anleitung mit Beispielen
 
 ---
 
-### 🛠️ Geräte-Alternativen
+### Warum wurde es neu erstellt?
 
-- Statt Shelly 1PM: z. B. Tasmota-Steckdose mit Power-Messung
-- Stromsensor via ESP32 (Eigenbau)
-- Türsensor: Aqara, Sonoff, Tuya – alle, die Home Assistant unterstützen
+Die erste Version war ein guter Start, aber schwer zu warten und nicht modular. Die neue Version ist deutlich einfacher zu übernehmen, robuster und dokumentiert.  
+**Der Wechsel lohnt sich – versprochen.**
+
+---
+
+➡️ **Hier geht’s direkt zur neuen Version:**  
+[https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)
+
+Viel Spaß mit Version 2.0 ☕🚀  
+
