@@ -1,56 +1,30 @@
-### 📅 2025-06-19
+# ⚠️ Projekt veraltet – bitte auf neue Version umsteigen
 
-* **Timer und Abschaltung**
-    * **Verbesserte Text-Erläuterungen:** Der Abschnitt "Was passiert konkret?" wurde detaillierter formuliert, um die Logik hinter dem Starten und Beenden der Timer sowie der Abschaltsequenz klarer darzustellen.
-    * **Anpassungshinweis ergänzt:** Ein eigener Abschnitt "🛠 Anpassung an deine Maschine" wurde hinzugefügt
+> 📢 **Wichtiger Hinweis:** Dieses Projekt wurde vollständig überarbeitet und ist ab sofort unter folgendem Link verfügbar:
 
-* **Template Sensoren**
-    * **Code-Verbesserung:** `unique_id` hinzugefügt.
-    * **Verbesserte Text-Erläuterungen:** Die Abschnitte "💡 **Erklärungen zu den erweiterten Parametern** und ▶️ **Nächste Schritte** wurden hinzugefügt
-
-
-* **Automation: Delongi Spülen erkennen**
-    * Den Trigger robuster gemacht, um Fehlalarme durch kurze Leistungsspitzen zu vermeiden. 
-    * `for:`-Dauer zum Trigger hinzugefügt, um sicherzustellen, dass der erhöhte Stromverbrauch für eine bestimmte Zeit anhält, bevor die Automation auslöst.
-      
-        ```yaml
-        trigger:
-          - platform: numeric_state
-            entity_id: sensor.dein_power_sensor_hier # Ersetze dies mit der echten ID deines Sensors (z.B. sensor.shelly_plug_power)
-            above: 500
-            for: # <--- Neu: Hier eine Dauer hinzufügen!
-              seconds: 2 # Oder 3, je nachdem wie kurz/lang die Spitze deiner Spülung ist.
-        ```
-    * Klarstellung im Text, dass es um einen *Anstieg* des Verbrauchs geht, der für eine gewisse Zeit gehalten wird, nicht um eine kurzzeitige "Spitze".
-    * Beispielcode für den Trigger aktualisiert, um die Verwendung von `for:` zu demonstrieren.
+🔗 **[➡️ homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)**
 
 ---
 
-### 📅 2025-06-18
+## 🆕 Was ist neu?
 
-* 🆕 **Changelog-Datei erstellt**
-   * für zukünftige Nachverfolgung von Änderungen.
+- ✅ Komplette Überarbeitung mit besserer Struktur
+- ✅ Alle Automationen als Blueprints verfügbar
+- ✅ Verbesserte Erkennung von Spülvorgängen & Tassengröße
+- ✅ Statistiken & Dashboard inklusive
+- ✅ Schritt-für-Schritt-Anleitung mit Beispielen
 
+---
 
-* ✍️ **Hinweis zur Maschinenabhängigkeit in der Spül-Erkennung ergänzt** 
-   * Die verwendete entity_id (Verbrauchssensor) und die delay-Zeit können je nach Kaffeemaschine variieren und müssen ggf. angepasst werden.
+### Warum wurde es neu erstellt?
 
-  
-* ✅ **Kaffeezählung verbessert**
-   * Eine zusätzliche Bedingung verhindert, dass ein Spülvorgang fälschlich als Kaffee gezählt wird.  
-   * Die input_boolean.spulen_erkannt muss mindestens 5 Sekunden auf off stehen, bevor gezählt wird.
+Die erste Version war ein guter Start, aber schwer zu warten und nicht modular. Die neue Version ist deutlich einfacher zu übernehmen, robuster und dokumentiert.  
+**Der Wechsel lohnt sich – versprochen.**
 
-        ```yaml
-        condition:
-          - condition: state
-            entity_id: input_boolean.spulen_erkannt
-            state: "off"
-            for: "00:00:05"
-        ```
+---
 
-* 📌 **Kaffeezubereitung-Erkennung überarbeitet**
+➡️ **Hier geht’s direkt zur neuen Version:**  
+[https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0](https://github.com/Dajwitt/homeassistant-smart-coffee-automation2.0)
 
-    * Beschreibung und Abläufe klarer erläutert
-    * 15-Sekunden-Verzögerung nach dem Zählen erklärt (zur Filterung von Verbrauchsschwankungen)
-    * Neuer Abschnitt "Anpassung an deine Maschine" mit Hinweisen zu Sensor, Schwelle, Mindestzeit und Brühzeit-Erkennung ergänzt
+Viel Spaß mit Version 2.0 ☕🚀  
 
